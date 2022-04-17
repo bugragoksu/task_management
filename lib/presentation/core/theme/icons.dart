@@ -17,4 +17,6 @@ class AppIcons {
   static const IconData rightArrow = IconData(0xe809, fontFamily: _kFontFam);
   static const IconData leftArrow = IconData(0xe80a, fontFamily: _kFontFam);
   static const IconData user = IconData(0xe80b, fontFamily: _kFontFam);
+  static const IconData lock = IconData(0xe80c, fontFamily: _kFontFam);
+  static const IconData mail = IconData(0xe80d, fontFamily: _kFontFam);
 }

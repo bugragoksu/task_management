@@ -12,6 +12,9 @@ class AppTheme {
       secondaryHeaderColor: AppColors.secondary,
       errorColor: AppColors.error,
       cardColor: AppColors.greyScale,
+      iconTheme: IconThemeData(
+        color: AppColors.greyScale.shade700,
+      ),
       cardTheme: CardTheme(
         color: AppColors.greyScale.shade50,
         elevation: 5,
@@ -32,7 +35,7 @@ class AppTheme {
         style: ButtonStyle(
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(8),
             ),
           ),
         ),
@@ -45,9 +48,10 @@ class AppTheme {
   }
 
   static TextStyle get headline1 {
-    return const TextStyle(
+    return TextStyle(
       fontSize: 32,
       fontWeight: FontWeight.w800,
+      color: AppColors.greyScale.shade900,
     );
   }
 

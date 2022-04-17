@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:task_management/presentation/core/theme/icons.dart';
+import 'package:flutter/services.dart';
+import 'package:task_management/presentation/auth/auth_screen.dart';
 import 'package:task_management/presentation/core/theme/theme.dart';
 
 void main() {
@@ -11,65 +12,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: Brightness.dark,
+      ),
+    );
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: AppTheme.lightTheme,
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-              style: Theme.of(context).textTheme.subtitle1,
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline1,
-            ),
-            const Icon(
-              AppIcons.document,
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text('hello'),
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(AppIcons.plus),
-      ),
+      home: const AuthScreen(),
     );
   }
 }
