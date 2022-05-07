@@ -11,18 +11,18 @@ class AppColors {
   );
 
   static const MaterialColor primary = MaterialColor(
-    4286408163,
-    {
-      50: Color(0xffede9fb),
-      100: Color(0xffdbd4f7),
-      200: Color(0xffb6a9ef),
-      300: Color(0xff927ee7),
-      400: Color(0xff6d52e0),
-      500: Color(0xff4927d8),
-      600: Color(0xff3a1fad),
-      700: Color(0xff2c1881),
-      800: Color(0xff1d1056),
-      900: Color(0xff0f082b)
+    0xFFED1A47,
+    <int, Color>{
+      50: Color(0xFFFFE4EE),
+      100: Color(0xFFFFC9DC),
+      200: Color(0xFFFF8FB3),
+      300: Color(0xFFFD5D8B),
+      400: Color(0xFFF73668),
+      500: Color(0xFFED1A47),
+      600: Color(0xFFD90B2E),
+      700: Color(0xFFC0071D),
+      800: Color(0xFFA4030E),
+      900: Color(0xFF870002),
     },
   );
 

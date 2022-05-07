@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_management/presentation/core/theme/icons.dart';
+import 'package:task_management/presentation/core/theme/text_theme.dart';
 
 class AuthScreen extends StatefulWidget {
   const AuthScreen({Key? key}) : super(key: key);
@@ -12,7 +13,7 @@ class _AuthScreenState extends State<AuthScreen> {
   bool _isLogin = true;
   String buttonText = 'Login';
   String loginText = 'Welcome\nPlease log in to continue';
-  String registerTexxt = 'Welcome\nPlease sign in to continue';
+  String registerText = 'Welcome\nPlease sign in to continue';
   String toSignUpText = 'Don\'t have an account?\nSign up';
   String toLoginText = 'Already have an account?\nLogin';
 
@@ -39,10 +40,10 @@ class _AuthScreenState extends State<AuthScreen> {
             children: <Widget>[
               Text(
                 _isLogin ? 'Login' : 'Sign Up',
-                style: Theme.of(context).textTheme.headline1,
+                style: AppTextTheme.instance!.buildTitleLarge,
               ),
               const Spacer(),
-              Text(_isLogin ? loginText : registerTexxt),
+              Text(_isLogin ? loginText : registerText),
               const Spacer(
                 flex: 2,
               ),
