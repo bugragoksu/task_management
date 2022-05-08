@@ -11,16 +11,17 @@
 // ignore_for_file: type=lint
 
 import 'package:auto_route/auto_route.dart' as _i4;
-import 'package:flutter/material.dart' as _i7;
+import 'package:flutter/material.dart' as _i8;
 
 import '../../pages/auth/auth_screen.dart' as _i2;
-import '../../pages/dashboard/dashboard_screen.dart' as _i6;
+import '../../pages/boards/board_create_screen.dart' as _i7;
+import '../../pages/boards/boards_screen.dart' as _i6;
 import '../../pages/home/home_screen.dart' as _i5;
 import '../../pages/splash/auth_state_router.dart' as _i1;
 import '../../pages/splash/splash_screen.dart' as _i3;
 
 class AppRouter extends _i4.RootStackRouter {
-  AppRouter([_i7.GlobalKey<_i7.NavigatorState>? navigatorKey])
+  AppRouter([_i8.GlobalKey<_i8.NavigatorState>? navigatorKey])
       : super(navigatorKey);
 
   @override
@@ -49,13 +50,17 @@ class AppRouter extends _i4.RootStackRouter {
       return _i4.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i5.HomeScreen());
     },
-    DashboardRouter.name: (routeData) {
+    BoardsRouter.name: (routeData) {
       return _i4.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i4.EmptyRouterPage());
     },
-    DashBoardScreenRoute.name: (routeData) {
+    BoardsScreenRoute.name: (routeData) {
       return _i4.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i6.DashBoardScreen());
+          routeData: routeData, child: const _i6.BoardsScreen());
+    },
+    BoardCreateScreenRoute.name: (routeData) {
+      return _i4.MaterialPageX<dynamic>(
+          routeData: routeData, child: const _i7.BoardCreateScreen());
     }
   };
 
@@ -79,12 +84,14 @@ class AppRouter extends _i4.RootStackRouter {
                     path: 'home',
                     parent: MainAppRoute.name,
                     children: [
-                      _i4.RouteConfig(DashboardRouter.name,
-                          path: 'dashboard',
+                      _i4.RouteConfig(BoardsRouter.name,
+                          path: 'boards',
                           parent: HomeTabsRoute.name,
                           children: [
-                            _i4.RouteConfig(DashBoardScreenRoute.name,
-                                path: '', parent: DashboardRouter.name)
+                            _i4.RouteConfig(BoardsScreenRoute.name,
+                                path: '', parent: BoardsRouter.name),
+                            _i4.RouteConfig(BoardCreateScreenRoute.name,
+                                path: 'boardCreate', parent: BoardsRouter.name)
                           ])
                     ])
               ])
@@ -137,18 +144,26 @@ class HomeTabsRoute extends _i4.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i4.EmptyRouterPage]
-class DashboardRouter extends _i4.PageRouteInfo<void> {
-  const DashboardRouter({List<_i4.PageRouteInfo>? children})
-      : super(DashboardRouter.name,
-            path: 'dashboard', initialChildren: children);
+class BoardsRouter extends _i4.PageRouteInfo<void> {
+  const BoardsRouter({List<_i4.PageRouteInfo>? children})
+      : super(BoardsRouter.name, path: 'boards', initialChildren: children);
 
-  static const String name = 'DashboardRouter';
+  static const String name = 'BoardsRouter';
 }
 
 /// generated route for
-/// [_i6.DashBoardScreen]
-class DashBoardScreenRoute extends _i4.PageRouteInfo<void> {
-  const DashBoardScreenRoute() : super(DashBoardScreenRoute.name, path: '');
+/// [_i6.BoardsScreen]
+class BoardsScreenRoute extends _i4.PageRouteInfo<void> {
+  const BoardsScreenRoute() : super(BoardsScreenRoute.name, path: '');
 
-  static const String name = 'DashBoardScreenRoute';
+  static const String name = 'BoardsScreenRoute';
+}
+
+/// generated route for
+/// [_i7.BoardCreateScreen]
+class BoardCreateScreenRoute extends _i4.PageRouteInfo<void> {
+  const BoardCreateScreenRoute()
+      : super(BoardCreateScreenRoute.name, path: 'boardCreate');
+
+  static const String name = 'BoardCreateScreenRoute';
 }

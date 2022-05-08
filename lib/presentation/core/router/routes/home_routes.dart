@@ -6,18 +6,22 @@ const homeRoute = AutoRoute(
   page: HomeScreen,
   initial: true,
   children: [
-    dashboardRoute,
+    boardsRoute,
   ],
 );
 
-const dashboardRoute = AutoRoute(
-  path: 'dashboard',
-  name: 'DashboardRouter',
+const boardsRoute = AutoRoute(
+  path: 'boards',
+  name: 'BoardsRouter',
   page: EmptyRouterPage,
   children: [
     AutoRoute(
       path: '',
-      page: DashBoardScreen,
+      page: BoardsScreen,
+    ),
+    AutoRoute(
+      path: 'boardCreate',
+      page: BoardCreateScreen,
     )
   ],
 );

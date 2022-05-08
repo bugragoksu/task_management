@@ -1,5 +1,16 @@
 {
-    "dashboard":{
-        "boards":"Boards"
+    "boards":
+    {
+        "title":"Boards",
+        "create":{
+            "title":"Create a new board",
+            "exampleProject":"Example Project",
+            "boardTitle":"Title",
+            "boardType":"Board Type",
+            "boardDetails":"Board Details",
+            "boardDescription":"Description",
+            "buttonText":"Create Board"
+        }
     }
+    
 }

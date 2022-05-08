@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:task_management/presentation/core/language/locale_keys.g.dart';
+import 'package:task_management/presentation/core/router/router.gr.dart';
 import 'package:task_management/presentation/core/theme/icons.dart';
 import 'package:task_management/presentation/core/theme/text_theme.dart';
-import 'package:task_management/presentation/pages/dashboard/widgets/board_item_card.dart';
+import 'package:task_management/presentation/pages/boards/widgets/board_item_card.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:auto_route/auto_route.dart';
 
-class DashBoardScreen extends StatelessWidget {
-  const DashBoardScreen({Key? key}) : super(key: key);
+class BoardsScreen extends StatelessWidget {
+  const BoardsScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,11 @@ class DashBoardScreen extends StatelessWidget {
       child: Scaffold(
         floatingActionButton: FloatingActionButton(
           child: const Icon(AppIcons.plus),
-          onPressed: () {},
+          onPressed: () {
+            context.router.navigate(
+              const BoardCreateScreenRoute(),
+            );
+          },
         ),
         body: Padding(
           padding: const EdgeInsets.all(16),
@@ -22,7 +28,7 @@ class DashBoardScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                LocaleKeys.dashboard_boards.tr(),
+                LocaleKeys.boards_title.tr(),
                 style: AppTextTheme.instance!.buildTitleLarge,
               ),
               const SizedBox(

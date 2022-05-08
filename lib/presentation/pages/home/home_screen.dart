@@ -10,8 +10,8 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return AutoTabsScaffold(
       routes: const [
-        DashboardRouter(),
-        DashboardRouter(),
+        BoardsRouter(),
+        BoardsRouter(),
       ],
       bottomNavigationBuilder: (_, tabsRouter) {
         return CupertinoTabBar(
