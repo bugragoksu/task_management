@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:task_management/presentation/core/language/locale_keys.g.dart';
 import 'package:task_management/presentation/core/theme/icons.dart';
 import 'package:task_management/presentation/core/theme/text_theme.dart';
 import 'package:task_management/presentation/pages/dashboard/widgets/board_item_card.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class DashBoardScreen extends StatelessWidget {
   const DashBoardScreen({Key? key}) : super(key: key);
@@ -20,7 +22,7 @@ class DashBoardScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Boards',
+                LocaleKeys.dashboard_boards.tr(),
                 style: AppTextTheme.instance!.buildTitleLarge,
               ),
               const SizedBox(
