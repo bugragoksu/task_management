@@ -20,8 +20,8 @@ const boardsRoute = AutoRoute(
       page: BoardsScreen,
     ),
     AutoRoute(
-      path: 'boardCreate',
-      page: BoardCreateScreen,
+      path: 'create',
+      page: CreateScreen,
     ),
     AutoRoute(
       path: 'boardDetail',

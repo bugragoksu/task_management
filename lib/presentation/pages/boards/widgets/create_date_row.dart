@@ -4,8 +4,8 @@ import 'package:task_management/presentation/core/theme/colors.dart';
 import 'package:task_management/presentation/core/theme/icons.dart';
 import 'package:task_management/presentation/core/theme/text_theme.dart';
 
-class BoardCreateDateRow extends StatelessWidget {
-  const BoardCreateDateRow({
+class CreateDateRow extends StatelessWidget {
+  const CreateDateRow({
     Key? key,
   }) : super(key: key);
 

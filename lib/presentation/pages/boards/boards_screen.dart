@@ -3,6 +3,7 @@ import 'package:task_management/presentation/core/language/locale_keys.g.dart';
 import 'package:task_management/presentation/core/router/router.gr.dart';
 import 'package:task_management/presentation/core/theme/icons.dart';
 import 'package:task_management/presentation/core/theme/text_theme.dart';
+import 'package:task_management/presentation/pages/boards/create/create_screen.dart';
 import 'package:task_management/presentation/pages/boards/widgets/board_item_card.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:auto_route/auto_route.dart';
@@ -18,7 +19,7 @@ class BoardsScreen extends StatelessWidget {
           child: const Icon(AppIcons.plus),
           onPressed: () {
             context.router.navigate(
-              const BoardCreateScreenRoute(),
+              CreateScreenRoute(type: CreateScreenType.board),
             );
           },
         ),

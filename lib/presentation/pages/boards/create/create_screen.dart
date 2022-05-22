@@ -4,24 +4,36 @@ import 'package:task_management/presentation/core/theme/icons.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:task_management/presentation/core/theme/text_theme.dart';
-import 'package:task_management/presentation/pages/boards/create/widgets/board_create_button.dart';
-import 'package:task_management/presentation/pages/boards/create/widgets/board_create_details_column.dart';
-import 'package:task_management/presentation/pages/boards/create/widgets/board_create_project_types.dart';
+import 'package:task_management/presentation/pages/boards/widgets/create_button.dart';
+import 'package:task_management/presentation/pages/boards/widgets/create_details_column.dart';
+import 'package:task_management/presentation/pages/boards/widgets/create_project_types.dart';
 
-class BoardCreateScreen extends StatefulWidget {
-  const BoardCreateScreen({Key? key}) : super(key: key);
-
-  @override
-  State<BoardCreateScreen> createState() => _BoardCreateScreenState();
+enum CreateScreenType {
+  board,
+  task,
 }
 
-class _BoardCreateScreenState extends State<BoardCreateScreen> {
+class CreateScreen extends StatefulWidget {
+  const CreateScreen({
+    Key? key,
+    required this.type,
+  }) : super(key: key);
+
+  final CreateScreenType type;
+
+  @override
+  State<CreateScreen> createState() => _CreateScreenState();
+}
+
+class _CreateScreenState extends State<CreateScreen> {
   late final TextEditingController _titleController;
 
   @override
   void initState() {
     _titleController = TextEditingController(
-      text: LocaleKeys.boards_create_exampleProject.tr(),
+      text: widget.type == CreateScreenType.board
+          ? LocaleKeys.boards_create_exampleProject.tr()
+          : LocaleKeys.tasks_create_exampleTask.tr(),
     );
     super.initState();
   }
@@ -31,7 +43,9 @@ class _BoardCreateScreenState extends State<BoardCreateScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          LocaleKeys.boards_create_title.tr(),
+          widget.type == CreateScreenType.board
+              ? LocaleKeys.boards_create_title.tr()
+              : LocaleKeys.tasks_create_title.tr(),
         ),
         automaticallyImplyLeading: true,
         leading: IconButton(
@@ -65,7 +79,9 @@ class _BoardCreateScreenState extends State<BoardCreateScreen> {
                 height: 20,
               ),
               Text(
-                LocaleKeys.boards_create_boardType.tr(),
+                widget.type == CreateScreenType.board
+                    ? LocaleKeys.boards_create_boardType.tr()
+                    : LocaleKeys.tasks_create_taskType.tr(),
                 style: AppTextTheme.instance!.buildTitleMedium,
               ),
               const SizedBox(
@@ -73,23 +89,29 @@ class _BoardCreateScreenState extends State<BoardCreateScreen> {
               ),
               const SizedBox(
                 height: 100,
-                child: BoardCreateProjectTypes(),
+                child: CreateProjectTypes(),
               ),
               const SizedBox(
                 height: 10,
               ),
               Text(
-                LocaleKeys.boards_create_boardDetails.tr(),
+                widget.type == CreateScreenType.board
+                    ? LocaleKeys.boards_create_boardDetails.tr()
+                    : LocaleKeys.tasks_create_taskDetails.tr(),
                 style: AppTextTheme.instance!.buildTitleMedium,
               ),
               const SizedBox(
                 height: 10,
               ),
-              const BoardCreateDetailsColumn(),
+              CreateDetailsColumn(
+                type: widget.type,
+              ),
               const SizedBox(
                 height: 30,
               ),
-              const BoardCreateButton(),
+              CreateButton(
+                type: widget.type,
+              ),
             ],
           ),
         ),

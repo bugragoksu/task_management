@@ -3,10 +3,13 @@ import 'package:boardview/board_list.dart';
 import 'package:boardview/boardview.dart';
 import 'package:flutter/material.dart';
 import 'package:task_management/application/board/models/board_model.dart';
+import 'package:task_management/presentation/core/router/router.gr.dart';
 import 'package:task_management/presentation/core/theme/colors.dart';
 import 'package:task_management/presentation/core/theme/icons.dart';
 import 'package:task_management/presentation/core/theme/text_theme.dart';
+import 'package:task_management/presentation/pages/boards/create/create_screen.dart';
 import 'package:task_management/presentation/pages/boards/widgets/board_members_row.dart';
+import 'package:auto_route/auto_route.dart';
 
 class BoardDetailScreen extends StatelessWidget {
   const BoardDetailScreen({
@@ -44,7 +47,11 @@ class BoardDetailScreen extends StatelessWidget {
         title: Text(boardTitle),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          context.router.navigate(
+            CreateScreenRoute(type: CreateScreenType.task),
+          );
+        },
         child: const Icon(AppIcons.plus),
       ),
       body: SafeArea(

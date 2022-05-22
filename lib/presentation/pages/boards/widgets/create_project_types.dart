@@ -3,8 +3,8 @@ import 'package:task_management/presentation/core/theme/colors.dart';
 import 'package:task_management/presentation/core/theme/text_theme.dart';
 import 'dart:math' as math;
 
-class BoardCreateProjectTypes extends StatelessWidget {
-  const BoardCreateProjectTypes({
+class CreateProjectTypes extends StatelessWidget {
+  const CreateProjectTypes({
     Key? key,
   }) : super(key: key);
 
