@@ -11,17 +11,18 @@
 // ignore_for_file: type=lint
 
 import 'package:auto_route/auto_route.dart' as _i4;
-import 'package:flutter/material.dart' as _i8;
+import 'package:flutter/material.dart' as _i9;
 
 import '../../pages/auth/auth_screen.dart' as _i2;
 import '../../pages/boards/boards_screen.dart' as _i6;
 import '../../pages/boards/create/board_create_screen.dart' as _i7;
+import '../../pages/boards/detail/board_detail_screen.dart' as _i8;
 import '../../pages/home/home_screen.dart' as _i5;
 import '../../pages/splash/auth_state_router.dart' as _i1;
 import '../../pages/splash/splash_screen.dart' as _i3;
 
 class AppRouter extends _i4.RootStackRouter {
-  AppRouter([_i8.GlobalKey<_i8.NavigatorState>? navigatorKey])
+  AppRouter([_i9.GlobalKey<_i9.NavigatorState>? navigatorKey])
       : super(navigatorKey);
 
   @override
@@ -61,6 +62,13 @@ class AppRouter extends _i4.RootStackRouter {
     BoardCreateScreenRoute.name: (routeData) {
       return _i4.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i7.BoardCreateScreen());
+    },
+    BoardDetailScreenRoute.name: (routeData) {
+      final args = routeData.argsAs<BoardDetailScreenRouteArgs>();
+      return _i4.MaterialPageX<dynamic>(
+          routeData: routeData,
+          child: _i8.BoardDetailScreen(
+              key: args.key, boardTitle: args.boardTitle));
     }
   };
 
@@ -91,7 +99,9 @@ class AppRouter extends _i4.RootStackRouter {
                             _i4.RouteConfig(BoardsScreenRoute.name,
                                 path: '', parent: BoardsRouter.name),
                             _i4.RouteConfig(BoardCreateScreenRoute.name,
-                                path: 'boardCreate', parent: BoardsRouter.name)
+                                path: 'boardCreate', parent: BoardsRouter.name),
+                            _i4.RouteConfig(BoardDetailScreenRoute.name,
+                                path: 'boardDetail', parent: BoardsRouter.name)
                           ])
                     ])
               ])
@@ -166,4 +176,29 @@ class BoardCreateScreenRoute extends _i4.PageRouteInfo<void> {
       : super(BoardCreateScreenRoute.name, path: 'boardCreate');
 
   static const String name = 'BoardCreateScreenRoute';
+}
+
+/// generated route for
+/// [_i8.BoardDetailScreen]
+class BoardDetailScreenRoute
+    extends _i4.PageRouteInfo<BoardDetailScreenRouteArgs> {
+  BoardDetailScreenRoute({_i9.Key? key, required String boardTitle})
+      : super(BoardDetailScreenRoute.name,
+            path: 'boardDetail',
+            args: BoardDetailScreenRouteArgs(key: key, boardTitle: boardTitle));
+
+  static const String name = 'BoardDetailScreenRoute';
+}
+
+class BoardDetailScreenRouteArgs {
+  const BoardDetailScreenRouteArgs({this.key, required this.boardTitle});
+
+  final _i9.Key? key;
+
+  final String boardTitle;
+
+  @override
+  String toString() {
+    return 'BoardDetailScreenRouteArgs{key: $key, boardTitle: $boardTitle}';
+  }
 }

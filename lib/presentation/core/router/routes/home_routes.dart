@@ -22,6 +22,10 @@ const boardsRoute = AutoRoute(
     AutoRoute(
       path: 'boardCreate',
       page: BoardCreateScreen,
+    ),
+    AutoRoute(
+      path: 'boardDetail',
+      page: BoardDetailScreen,
     )
   ],
 );
