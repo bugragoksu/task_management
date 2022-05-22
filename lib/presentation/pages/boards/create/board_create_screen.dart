@@ -4,9 +4,9 @@ import 'package:task_management/presentation/core/theme/icons.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:task_management/presentation/core/theme/text_theme.dart';
-import 'package:task_management/presentation/pages/boards/widgets/board_create_button.dart';
-import 'package:task_management/presentation/pages/boards/widgets/board_create_details_column.dart';
-import 'package:task_management/presentation/pages/boards/widgets/board_create_project_types.dart';
+import 'package:task_management/presentation/pages/boards/create/widgets/board_create_button.dart';
+import 'package:task_management/presentation/pages/boards/create/widgets/board_create_details_column.dart';
+import 'package:task_management/presentation/pages/boards/create/widgets/board_create_project_types.dart';
 
 class BoardCreateScreen extends StatefulWidget {
   const BoardCreateScreen({Key? key}) : super(key: key);

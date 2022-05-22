@@ -14,8 +14,8 @@ import 'package:auto_route/auto_route.dart' as _i4;
 import 'package:flutter/material.dart' as _i8;
 
 import '../../pages/auth/auth_screen.dart' as _i2;
-import '../../pages/boards/board_create_screen.dart' as _i7;
 import '../../pages/boards/boards_screen.dart' as _i6;
+import '../../pages/boards/create/board_create_screen.dart' as _i7;
 import '../../pages/home/home_screen.dart' as _i5;
 import '../../pages/splash/auth_state_router.dart' as _i1;
 import '../../pages/splash/splash_screen.dart' as _i3;
